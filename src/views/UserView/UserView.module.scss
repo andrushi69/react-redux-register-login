@@ -1,0 +1,27 @@
+.user_container {
+
+  display: flex;
+  align-items: center;
+
+  span {
+    color: fuchsia;
+    //font-weight: bold;
+    font-size: 20px;
+
+    &:nth-child(2) {
+      margin: 0 10px;
+      color: yellowgreen;
+    }
+  }
+
+  button {
+    border: 1px solid fuchsia;
+    background: transparent;
+    border-radius: 10px;
+    color: fuchsia;
+    font-weight: bold;
+    padding: 5px;
+    width: 70px;
+    margin-right: 15px;
+  }
+}

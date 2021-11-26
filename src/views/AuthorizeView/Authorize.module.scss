@@ -1,0 +1,313 @@
+.all_register_content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  .registration_container {
+    width: 500px;
+    height: 500px;
+    background-color: black;
+    position: fixed;
+    border-radius: 10px;
+    box-shadow: 0 0 40px yellowgreen;
+    border: 3px solid fuchsia;
+    z-index: 20;
+    padding: 15px;
+  }
+
+}
+
+.search_form {
+  display: flex;
+  margin: 50px;
+  flex-direction: column;
+
+  button {
+    background-color: transparent;
+    outline: none;
+    border: 2px solid fuchsia;
+    border-radius: 4px;
+    height: 40px;
+    width: 80%;
+    margin: 50px auto 0;
+
+    span {
+      color: fuchsia;
+      font-size: 1rem;
+    }
+  }
+
+  /*For Name */
+  .input_field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    z-index: 10;
+    border-bottom: 2px solid white;
+    outline: 0;
+    font-size: 20px;
+    color: white;
+    padding: 10px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:placeholder-shown ~ .input_label {
+      font-size: 1.3rem;
+      cursor: text;
+      top: 65px;
+      font-weight: 600;
+    }
+  }
+
+  .input_label {
+    position: absolute;
+    top: 45px;
+    display: block;
+    transition: 0.2s ease-in-out;
+    font-size: 1rem;
+    color: white;
+  }
+
+  .input_field:focus {
+    ~ .input_label {
+      position: absolute;
+      top: 45px;
+      display: block;
+      font-size: 1rem;
+      color: fuchsia;
+      font-weight: 700;
+      transition: 0.3s ease-in-out;
+    }
+
+    font-weight: 700;
+    border-image: linear-gradient(to right, white, fuchsia);
+    border-image-slice: 1;
+
+  }
+
+  /*For Email */
+  .input_field_email {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    z-index: 10;
+    border-bottom: 2px solid white;
+    outline: 0;
+    font-size: 20px;
+    color: white;
+    padding: 10px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+    margin-top: 50px;
+
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:placeholder-shown ~ .input_label_email {
+      font-size: 1.3rem;
+      cursor: text;
+      top: 65px;
+      font-weight: 600;
+    }
+  }
+
+  .input_label_email {
+    position: absolute;
+    top: 135px;
+    display: block;
+    transition: 0.2s ease-in-out;
+    font-size: 1rem;
+    color: white;
+  }
+
+  .input_field_email:focus {
+    ~ .input_label_email {
+      position: absolute;
+      top: 135px;
+      display: block;
+      font-size: 1rem;
+      color: fuchsia;
+      font-weight: 700;
+      transition: 0.3s ease-in-out;
+    }
+
+    font-weight: 700;
+    border-image: linear-gradient(to right, white, fuchsia);
+    border-image-slice: 1;
+
+  }
+
+  /*For Password */
+  .input_field_password {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    z-index: 10;
+    border-bottom: 2px solid white;
+    outline: 0;
+    font-size: 20px;
+    color: white;
+    padding: 10px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+    margin-top: 50px;
+
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:placeholder-shown ~ .input_label_password {
+      font-size: 1.3rem;
+      cursor: text;
+      top: 65px;
+      font-weight: 600;
+    }
+  }
+
+  .input_label_password {
+    position: absolute;
+    top: 225px;
+    display: block;
+    transition: 0.2s ease-in-out;
+    font-size: 1rem;
+    color: white;
+  }
+
+  .input_field_password:focus {
+    ~ .input_label_password {
+      position: absolute;
+      top: 225px;
+      display: block;
+      font-size: 1rem;
+      color: fuchsia;
+      font-weight: 700;
+      transition: 0.3s ease-in-out;
+    }
+
+    font-weight: 700;
+    border-image: linear-gradient(to right, white, fuchsia);
+    border-image-slice: 1;
+
+  }
+
+
+  /*For Email Login */
+  .input_field_email_login {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    z-index: 10;
+    border-bottom: 2px solid white;
+    outline: 0;
+    font-size: 20px;
+    color: white;
+    padding: 10px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+    //margin-top: 50px;
+
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:placeholder-shown ~ .input_label_email_login {
+      font-size: 1.3rem;
+      cursor: text;
+      top: 45px;
+      font-weight: 600;
+    }
+  }
+
+  .input_label_email_login {
+    position: absolute;
+    top: 45px;
+    display: block;
+    transition: 0.2s ease-in-out;
+    font-size: 1rem;
+    color: white;
+  }
+
+  .input_field_email_login:focus {
+    ~ .input_label_email_login {
+      position: absolute;
+      top: 45px;
+      display: block;
+      font-size: 1rem;
+      color: fuchsia;
+      font-weight: 700;
+      transition: 0.3s ease-in-out;
+    }
+
+    font-weight: 700;
+    border-image: linear-gradient(to right, white, fuchsia);
+    border-image-slice: 1;
+
+  }
+
+  /*For Password Login */
+  .input_field_password_login {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    z-index: 10;
+    border-bottom: 2px solid white;
+    outline: 0;
+    font-size: 20px;
+    color: white;
+    padding: 10px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+    margin-top: 50px;
+
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:placeholder-shown ~ .input_label_password_login {
+      font-size: 1.3rem;
+      cursor: text;
+      top: 135px;
+      font-weight: 600;
+    }
+  }
+
+  .input_label_password_login {
+    position: absolute;
+    top: 135px;
+    display: block;
+    transition: 0.2s ease-in-out;
+    font-size: 1rem;
+    color: white;
+  }
+
+  .input_field_password_login:focus {
+    ~ .input_label_password_login {
+      position: absolute;
+      top: 135px;
+      display: block;
+      font-size: 1rem;
+      color: fuchsia;
+      font-weight: 700;
+      transition: 0.3s ease-in-out;
+    }
+
+    font-weight: 700;
+    border-image: linear-gradient(to right, white, fuchsia);
+    border-image-slice: 1;
+
+  }
+}
