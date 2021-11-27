@@ -51,6 +51,7 @@
   "devDependencies": {
     "@reduxjs/toolkit": "^1.6.2",
     "axios": "^0.24.0",
+    "file-loader": "^6.2.0",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.0.2",
     "redux-devtools-extension": "^2.13.9"

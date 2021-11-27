@@ -1,5 +1,5 @@
 import React from 'react';
-import {NavLink} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import classes from "../NavigationBar/Nav.module.scss";
 
 const RegisterNavigation = () => {

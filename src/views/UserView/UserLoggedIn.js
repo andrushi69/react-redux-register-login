@@ -1,8 +1,8 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {authSelectors} from '../../redux/Authorize';
-import {authOperations} from '../../redux/Authorize';
+import {authOperations, authSelectors} from '../../redux/Authorize';
 import classes from "./UserView.module.scss";
+import {Link} from "react-router-dom";
 
 const UserLoggedIn = () => {
 
@@ -10,9 +10,11 @@ const UserLoggedIn = () => {
   const userName = useSelector(authSelectors.getUsername)
   return (
     <div className={classes.user_container}>
-      <span>YOU ARE WELCOME</span>
-      <span>{userName.toUpperCase()}</span>
-      <button onClick={()=> dispatch(authOperations.userLogOut())}>Log Out</button>
+      <span className={"animate__animated  animate__zoomIn"}>YOU ARE WELCOME</span>
+      <span className={"animate__animated  animate__zoomIn"}>{userName.toUpperCase()}</span>
+      <button className={"animate__animated  animate__zoomIn"} onClick={() => dispatch(authOperations.userLogOut())}>Log
+        Out
+      </button>
     </div>
   );
 };

@@ -6,6 +6,8 @@ import "animate.css"
 
 const HomeView = () => {
   const userName = useSelector(authSelectors.getUsername)
+
+
   return (
     <div className={classes.home_content}>
       {userName ? <h1 className={"animate__animated animate__fast animate__zoomIn"}>HELLO {userName} !</h1> :

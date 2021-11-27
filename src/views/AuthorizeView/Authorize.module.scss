@@ -10,10 +10,10 @@
   .registration_container {
     width: 500px;
     height: 500px;
-    background-color: black;
+    background-color: transparent;
     position: fixed;
     border-radius: 10px;
-    box-shadow: 0 0 40px yellowgreen;
+    //box-shadow: 0 0 40px yellowgreen;
     border: 3px solid fuchsia;
     z-index: 20;
     padding: 15px;
@@ -35,6 +35,10 @@
     width: 80%;
     margin: 50px auto 0;
 
+    &:disabled {
+      opacity: 0.7;
+    }
+
     span {
       color: fuchsia;
       font-size: 1rem;
@@ -51,7 +55,7 @@
     outline: 0;
     font-size: 20px;
     color: white;
-    padding: 10px 0;
+    padding: 10px 0 7px;
     background: transparent;
     transition: border-color 0.2s;
 
@@ -310,4 +314,17 @@
     border-image-slice: 1;
 
   }
+}
+
+.show_hide_password {
+  position: absolute;
+  right: 70px;
+  top: 255px;
+  z-index: 20;
+}
+.show_hide_password_login{
+  position: absolute;
+  right: 70px;
+  top: 165px;
+  z-index: 20;
 }

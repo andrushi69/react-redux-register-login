@@ -13,6 +13,7 @@ export default function Form() {
   const [dirtyNumber, setDirtyNumber] = useState(false)
   const [nameError, setNameError] = useState("Name couldn't be empty")
   const [numberError, setNumberError] = useState("Number couldn't be empty")
+
   const [valid, setValid] = useState(false)
 
   const uniqueId = shortid.generate()
@@ -90,7 +91,7 @@ export default function Form() {
     <form className={styles.form} onSubmit={handleSubmit}>
       <label className={`${styles.form_label} animate__animated animate__fast animate__zoomIn`} htmlFor={uniqueId}>
         Name
-        {(dirtyName && nameError) && <div style={{color: "red"}}>{nameError}</div>}
+        {(dirtyName && nameError) && <div style={{color: "red", position: "absolute", right: "0"}}>{nameError}</div>}
         <input className={`${styles.form_input} animate__animated animate__fast animate__zoomIn`} type="text"
                name="name"
                id={uniqueId}
@@ -103,7 +104,8 @@ export default function Form() {
       <label className={`${styles.form_label} animate__animated animate__fast animate__zoomIn`}
              htmlFor={uniqueIdSecond}>
         Phone
-        {(dirtyNumber && numberError) && <div style={{color: "red"}}>{numberError}</div>}
+        {(dirtyNumber && numberError) &&
+        <div style={{color: "red", position: "absolute", right: "0"}}>{numberError}</div>}
         <input className={`${styles.form_input} animate__animated animate__fast animate__zoomIn`} type="tel"
                name="number"
                autoComplete={"off"}
@@ -113,7 +115,8 @@ export default function Form() {
                placeholder={"123-456-7890"}
         />
       </label>
-      <button disabled={!valid} className={`${styles.form_button} animate__animated animate__fast animate__zoomIn`} type="submit">Add
+      <button disabled={!valid} className={`${styles.form_button} animate__animated animate__fast animate__zoomIn`}
+              type="submit">Add
         Contact
       </button>
     </form>

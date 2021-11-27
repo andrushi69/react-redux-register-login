@@ -36,9 +36,19 @@ p {
   justify-content: space-between;
   border-bottom: 2px solid fuchsia;
 }
-.active{
-  color: fuchsia !important;
+.active {
+  color: greenyellow !important;
+  font-weight: bold;
 }
+
+.loading {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
 .main_content {
   overflow: hidden;
 
