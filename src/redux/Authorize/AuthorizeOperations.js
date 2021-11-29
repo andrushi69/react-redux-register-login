@@ -1,6 +1,5 @@
 import axios from "axios";
 import {createAsyncThunk} from "@reduxjs/toolkit";
-import Error from "../../components/Error/Error";
 
 
 axios.defaults.baseURL = "https://connections-api.herokuapp.com"
@@ -21,20 +20,20 @@ const userRegister = createAsyncThunk('auth/register', async credentials => {
     token.set(data.token)
     return data;
   } catch (error) {
-    return (
-      <Error error={error}/>
-    )
+    alert("error")
   }
 });
-const userLogIn = createAsyncThunk('auth/login', async credentials => {
+
+const userLogIn = createAsyncThunk('auth/login', async (credentials, rejectWithValue) => {
   try {
     const {data} = await axios.post('/users/login', credentials);
     token.set(data.token)
-    return data;
+    if (data && data) {
+      return data;
+    }
+
   } catch (error) {
-    return (
-      <Error error={error}/>
-    )
+    rejectWithValue(error)
   }
 });
 const userLogOut = createAsyncThunk('auth/logout', async () => {
@@ -42,9 +41,7 @@ const userLogOut = createAsyncThunk('auth/logout', async () => {
     await axios.post('/users/logout');
     token.unset()
   } catch (error) {
-    return (
-      <Error error={error}/>
-    )
+    alert("error")
   }
 });
 const fetchCurrentUser = createAsyncThunk(
@@ -62,9 +59,7 @@ const fetchCurrentUser = createAsyncThunk(
       const { data } = await axios.get('/users/current');
       return data;
     } catch (error) {
-      return (
-        <Error error={error}/>
-      )
+      alert("error")
     }
   },
 );

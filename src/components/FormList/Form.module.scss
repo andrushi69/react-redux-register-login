@@ -29,8 +29,16 @@
     background-color: transparent;
     color: fuchsia;
     font-size: 20px;
+
+    &:hover {
+      background-color: fuchsia;
+      color: white;
+
+    }
+
     &:disabled {
       opacity: 0.7;
+      color: fuchsia;
     }
   }
 

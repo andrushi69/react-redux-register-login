@@ -12,7 +12,6 @@ import Login from "./views/AuthorizeView/Login";
 import ContactsView from "./views/ContactsView/ContactsView";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Loader from "react-loader-spinner";
-import styles from "./components/Search/Search.module.scss";
 
 const App = () => {
   const dispatch = useDispatch()

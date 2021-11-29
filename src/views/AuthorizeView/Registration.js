@@ -4,6 +4,7 @@ import {useDispatch} from "react-redux";
 import {authOperations} from "../../redux/Authorize"
 import EyeOpen from "../../components/Icons/eye.svg"
 import EyeClose from "../../components/Icons/eye-blocked.svg"
+import Button from '@mui/material/Button';
 
 
 const Registration = () => {
@@ -107,27 +108,30 @@ const Registration = () => {
           {(dirtyName && nameError) &&
           <div className={"animate__animated animate__fast animate__fadeIn"}
                style={{color: "red", position: "absolute", top: "45px", right: "65px"}}>{nameError}</div>}
-          <input className={classes.input_field} type="text" autoComplete="off" id={"name"} name={"name"} value={name}
+          <input className={classes.input_field} placeholder={"Andrew"} type="text" autoComplete="off" id={"name"}
+                 name={"name"} value={name}
                  onChange={handleChangeName}/>
           <label htmlFor={"name"} className={classes.input_label}>Name</label>
           {(dirtyEmail && emailError) &&
           <div className={"animate__animated animate__fast animate__fadeIn"}
                style={{color: "red", position: "absolute", top: "135px", right: "65px"}}>{emailError}</div>}
-          <input className={classes.input_field_email} type="text" autoComplete="off" id={"email"} name={"email"}
+          <input className={classes.input_field_email} placeholder={"example@gmail.com"} type="text" autoComplete="off"
+                 id={"email"} name={"email"}
                  value={email}
                  onChange={handleChangeEmail}/>
           <label htmlFor={"email"} className={classes.input_label_email}>Email</label>
           {(dirtyPassword && passwordError) &&
           <div className={"animate__animated animate__fast animate__fadeIn"}
                style={{color: "red", position: "absolute", top: "225px", right: "65px"}}>{passwordError}</div>}
-          <input className={classes.input_field_password} type={passwordShown ? "text" : "password"} autoComplete="off"
+          <input className={classes.input_field_password} placeholder={"any 3-12 symbols"}
+                 type={passwordShown ? "text" : "password"} autoComplete="off"
                  id={"password"}
                  name={"password"} data-sign="☺" value={password}
                  onChange={handleChangePassword}/>
           <a className={classes.show_hide_password} onClick={togglePassword}>{passwordShown ?
             <img src={EyeOpen} alt="Hide"/> : <img src={EyeClose} alt="Show"/>}</a>
           <label htmlFor={"password"} className={classes.input_label_password}>Password</label>
-          <button disabled={!valid} type="submit"><span>Submit</span></button>
+          <Button disabled={!valid} color={"secondary"} type="submit" variant={"contained"}>Submit</Button>
         </form>
 
       </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {authOperations, authSelectors} from '../../redux/Authorize';
 import classes from "./UserView.module.scss";
-import {Link} from "react-router-dom";
+import Button from "@mui/material/Button";
 
 const UserLoggedIn = () => {
 
@@ -12,9 +12,8 @@ const UserLoggedIn = () => {
     <div className={classes.user_container}>
       <span className={"animate__animated  animate__zoomIn"}>YOU ARE WELCOME</span>
       <span className={"animate__animated  animate__zoomIn"}>{userName.toUpperCase()}</span>
-      <button className={"animate__animated  animate__zoomIn"} onClick={() => dispatch(authOperations.userLogOut())}>Log
-        Out
-      </button>
+      <Button className={"animate__animated  animate__zoomIn"} onClick={() => dispatch(authOperations.userLogOut())}>Log
+        Out</Button>
     </div>
   );
 };

@@ -4,6 +4,7 @@ import shortid from "shortid"
 import {useDispatch, useSelector} from "react-redux";
 import contactsOperations from "../../redux/Contacts/ContactsOperations"
 import * as contactsSelectors from "../../redux/Contacts/ContactsSelectors";
+import Button from "@mui/material/Button";
 
 
 export default function Form() {
@@ -115,10 +116,9 @@ export default function Form() {
                placeholder={"123-456-7890"}
         />
       </label>
-      <button disabled={!valid} className={`${styles.form_button} animate__animated animate__fast animate__zoomIn`}
-              type="submit">Add
-        Contact
-      </button>
+      <Button disabled={!valid} className={`${styles.form_button} animate__animated animate__fast animate__zoomIn`}
+              color={"secondary"} type="submit" variant={"contained"}>Add
+        Contact</Button>
     </form>
 
   )

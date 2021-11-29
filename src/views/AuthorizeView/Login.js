@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import classes from "./Authorize.module.scss";
-import {authOperations} from "../../redux/Authorize";
+import {authOperations, authSelectors} from "../../redux/Authorize";
 import {useDispatch} from "react-redux";
 import EyeOpen from "../../components/Icons/eye.svg";
 import EyeClose from "../../components/Icons/eye-blocked.svg";
+import Button from "@mui/material/Button";
+import {ToastContainer} from "react-toastify";
 
 const Login = () => {
   const [email, setEmail] = useState("")
@@ -15,6 +17,7 @@ const Login = () => {
   const [passwordError, setPasswordError] = useState("Password can't be empty")
   const dispatch = useDispatch()
   const [valid, setValid] = useState(false)
+
 
   useEffect(() => {
     if (passwordError || emailError) {
@@ -76,21 +79,23 @@ const Login = () => {
           {(dirtyEmail && emailError) &&
           <div className={"animate__animated animate__fast animate__fadeIn"}
                style={{color: "red", position: "absolute", top: "45px", right: "65px"}}>{emailError}</div>}
-          <input className={classes.input_field_email_login} type="text" autoComplete="off" id={"email"} name={"email"}
+          <input className={classes.input_field_email_login} placeholder={"example@gmail.com"} type="text"
+                 autoComplete="off" id={"email"} name={"email"}
                  value={email}
                  onChange={handleChangeEmail}/>
           <label htmlFor={"email"} className={classes.input_label_email_login}>Email</label>
           {(dirtyPassword && passwordError) &&
           <div className={"animate__animated animate__fast animate__fadeIn"}
                style={{color: "red", position: "absolute", top: "135px", right: "65px"}}>{passwordError}</div>}
-          <input className={classes.input_field_password_login} type={passwordShown ? "text" : "password"}
+          <input className={classes.input_field_password_login} placeholder={"any 3-12 symbols"}
+                 type={passwordShown ? "text" : "password"}
                  autoComplete="off" id={"password"}
                  name={"password"} data-sign="☺" value={password}
                  onChange={handleChangePassword}/>
           <a className={classes.show_hide_password_login} onClick={togglePassword}>{passwordShown ?
             <img src={EyeOpen} alt="Hide"/> : <img src={EyeClose} alt="Show"/>}</a>
           <label htmlFor={"password"} className={classes.input_label_password_login}>Password</label>
-          <button disabled={!valid} type="submit"><span>Submit</span></button>
+          <Button disabled={!valid} color={"secondary"} type="submit" variant={"contained"}>Submit</Button>
         </form>
       </div>
 
